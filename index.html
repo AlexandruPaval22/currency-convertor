@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!--meta links-->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--title-->
+
+    <title>Currency Convertor</title>
+
+    <!--css link-->
+
+    <link type="text/css" rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!--start app-->
+
+    <button id="btn-start">Open App Convertor</button>
+
+    <div class="container hidden">
+        <div id="header-bar"></div>
+
+        <p style="color:gray">Exchange Rate</p>
+        <p id="total"></p>
+
+        <!--input value and select moned-->
+
+        <div class="sub-container">
+
+            <!--select first value-->
+
+            <div>
+
+                <label for="num1">Amount</label>
+                <input type="number" name="num1" id="num1" placeholder="Adauga valoarea">
+
+                <div class="p">
+                    <p>From</p>
+                    &darr;
+                    <select for="num1" id="unit1">
+                        <option value="EUR" id="eur" name="EUR" title="Euro">
+                            <span class="flag"></span>
+                            <span>EUR</span>
+                        </option>
+                        <option value="USD" id="usd" name="USD">USD</option>
+                        <option value="RON" id="ron" name="RON"> 
+                         RON
+                        </option>
+                    </select>
+
+                    <!--select 2nd value-->
+
+                    <p>To</p>
+                    &darr;
+                    <select for="num2" id="unit2">
+                        <option value="EUR" id="eur" name="EUR">EUR</option>
+                        <option value="USD" id="usd" name="USD">USD</option>
+                        <option value="RON" id="ron" name="RON">RON</option>
+                    </select>
+                </div>
+            </div>
+
+
+        </div>
+
+        <button id="btn">Convert</button>
+
+
+    </div>
+
+</body>
+<script src="main.js"></script>
+</html>
