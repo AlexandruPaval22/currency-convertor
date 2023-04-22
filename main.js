@@ -11,34 +11,48 @@ start.addEventListener("click" , openApp => {
   start.style.display = "none";
 })
 
-/* api key and connect to server */
 
+// api key and connect to server
 
-const baseCurrency = unit1.value.toUpperCase();
-const targetCurrency = unit2.value.toUpperCase();
-const amount = num1.value;
 
 const btn = document.getElementById("btn");
 const total = document.getElementById("total");
 
+var myHeaders = new Headers();
+myHeaders.append("apikey", "G6gEQ39wC2T3CkQFxJ9zDSefEdnkb3w6");
 
-const apiKey = "WPhl5aywmvbZGGZxf6QhrZN7Jxh5cyLB";
-const url = "https://api.currencylayer.com/live?access_key=${apiKey}&source=${baseCurrency}&currencies=${targetCurrency}";
+var requestOptions = {
+  method: 'GET',
+  redirect: 'follow',
+  headers: myHeaders
+};
 
+btn.addEventListener("click" , () =>{
 
+const amount = num1.value;
+const baseCurrency = unit1.value;
+const targetCurrency = unit2.value;
+const url = `https://api.apilayer.com/exchangerates_data/convert?to=${targetCurrency}&from=${baseCurrency}&amount=${amount}`;
 
-btn.addEventListener("click" , ()=>{
-
-  fetch(url)
+fetch(url , requestOptions)
   .then(response => response.json())
-  .then(data => {
-    const rate = data.quotes[`${baseCurrency}${targetCurrency}`];
-    const convertedAmount = amount * rate;
-    total.innerText = "${convertedAmount.toFixed(2)} ${targetCurrency";
-  })
-  .catch(error => console.log("error", error));
+  .then(result => {
+    console.log(result);
+    const convertedAmount = result.result;
+    total.innerHTML = convertedAmount;
 
-});
+  })
+  .catch(error => console.log('error', error));
+
+  });
+
+
+
+
+
+
+
+ 
 
 
 
