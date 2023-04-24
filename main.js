@@ -12,14 +12,14 @@ start.addEventListener("click" , openApp => {
 })
 
 
-// api key and connect to server
+ // api key and connect to server
 
 
 const btn = document.getElementById("btn");
 const total = document.getElementById("total");
 
 var myHeaders = new Headers();
-//myHeaders.append("apikey", "G6gEQ39wC2T3CkQFxJ9zDSefEdnkb3w6");
+myHeaders.append("apikey", "G6gEQ39wC2T3CkQFxJ9zDSefEdnkb3w6");
 
 var requestOptions = {
   method: 'GET',
