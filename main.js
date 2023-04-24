@@ -9,10 +9,10 @@ const container = document.querySelector(".container");
 start.addEventListener("click" , openApp => {
   container.classList.remove("hidden");
   start.style.display = "none";
-})
+});
 
 
- // api key and connect to server
+// api key and connect to server
 
 
 const btn = document.getElementById("btn");
